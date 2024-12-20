@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.article {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.article img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article h2 {
+    margin-bottom: 10px;
+}
+
+.article p {
+    margin: 10px 0;
+}
+
+a.back-link {
+    display: block;
+    margin-top: 20px;
+    color: blue;
+    text-decoration: underline;
+}
+
+a.back-link:hover {
+    text-decoration: none;
+}

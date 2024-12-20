@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>News Summarizer</h1>
+    <div class="articles">
+        {% for article in articles %}
+        <div class="article">
+            <h2>{{ article.title }}</h2>
+            <p><strong>Author:</strong> {{ article.author }}</p>
+            <p><strong>Date:</strong> {{ article.date }}</p>
+            <img src="{{ article.image }}" alt="Article Image">
+            <p><strong>Summary:</strong> {{ article.summary }}</p>
+            <p><a href="{{ url_for('article', id=loop.index0 + (page-1)*5) }}">View Full News</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if page > 1 %}
+        <a href="{{ url_for('index', page=page-1) }}">Previous</a>
+        {% endif %}
+        <a href="{{ url_for('index', page=page+1) }}">Next</a>
+    </div>
+</body>
+</html>
